@@ -5,6 +5,7 @@ import {BsChevronDown, BsSearch} from 'react-icons/bs'
 import {AiOutlineSearch} from 'react-icons/ai'
 import Button1 from '../static/Button1'
 import Button2 from '../static/Button2'
+import {NavLink} from "react-router-dom"
 
 const Header = () => {
   return (
@@ -28,8 +29,12 @@ const Header = () => {
                     <Stext placeholder='Search Postman'/>
                 </SearchBar>
                 <ButtonHolder>
+                    <NavLinks to={"login"}>
                     <Button2 bor={'1px solid lightgray'} col={'black'} bg={'#ffffff'} hbg={'#f9f9f7'} des={'Sign In'}/>
-                    <Button1 col={'white'} bg={'#FF6C37'} hbg={'#E05320'} des={'Sign Up for Free'} styles={{borderRadius: '5px'}}/>
+                    </NavLinks>
+                   <NavLinks to={"signup"}>
+                   <Button1 col={'white'} bg={'#FF6C37'} hbg={'#E05320'} des={'Sign Up for Free'} styles={{borderRadius: '5px'}}/>
+                   </NavLinks>
                 </ButtonHolder>
             </Main>
         </Container>
@@ -37,6 +42,10 @@ const Header = () => {
   )
 }
 
+const NavLinks = styled(NavLink)`
+text-decoration: none;
+
+`
 const Sbar = styled(BsSearch)`
 margin-right: 5px;
 font-size: 13px;
